@@ -74,5 +74,28 @@ async function startCLI() {
     
 }
 
+async function viewDepartments() {
+    try {
+        const result = await pool.query("SELECT * FROM departments;");
+        console.table(result.rows);
+    } catch (err) {
+        console.error("Error fetching department:", err);
+    }  
+}
+
+async function viewRoles() {
+    try {
+        const result = await pool.query(`
+            SELECT roles.id, roles.title, roles.salary, departments.name AS department
+            FROM roles
+            JOIN departments ON roles.department_id = departments.id;
+        `);
+        console.table(result.rows);
+    } catch (err) {
+        console.error("Error fetching roles:", err);
+    }
+}
+
+
 
 
