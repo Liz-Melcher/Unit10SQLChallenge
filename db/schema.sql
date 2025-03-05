@@ -6,14 +6,14 @@ CREATE DATABASE business_db;
 
 CREATE TABLE departments (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) UNIQUE NOT NULL
+    name VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE roles (  
     id SERIAL PRIMARY KEY,
-    title VARCHAR(100),
-    salary DECIMAL(10, 2), 
-    department_id INTEGER,
+    title VARCHAR(30) UNIQUE NOT NULL,
+    salary DECIMAL NOT NULL, 
+    department_id INTEGER NOT NULL,
     FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE SET NULL
 ); 
 
@@ -22,7 +22,6 @@ CREATE TABLE employees (
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER NOT NULL,
-    department_id INTEGER NOT NULL,
     manager_id INTEGER,
     FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL,
     FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE SET NULL,
