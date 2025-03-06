@@ -1,3 +1,21 @@
+Read Me: 
+
+GitHub repository: https://github.com/Liz-Melcher/Unit10SQLChallenge 
+Video demonstration: https://youtu.be/Iu6Rp0INNeE 
+
+Description: This is a command line application that allows businesses to manage departments, roles, and employees. 
+
+Installation: This application is built with node.js, inquirer, and PostgreSQL.  
+1. Install node
+2. Install dependencies.
+3. Create a .env file with your postgreSQL username and password, and the database name "business_db" 
+4. to start the CLI, use NPM run build as the command 
+
+License: MIT license 
+
+Contributing: There was no starter code for this project.  Below is the initial instructions for the project itself. 
+
+
 # 10 SQL: Employee Tracker
 
 ## Your Task
